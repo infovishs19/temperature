@@ -37,8 +37,6 @@ function draw () {
 	
 
 	currentIndex = constrain(currentIndex + 1, 0, data.length-1);
-	//console.log(currentIndex);
-
 
 	let w = width / data.length;
 	let x = 0;
@@ -50,10 +48,6 @@ function draw () {
 	for (let i = 0; i < currentIndex; i++) {
 		const d = data[i];
 		x = i * w;
-		//let amt = map(d.temperature, minTemp, maxTemp, 0, 1);
-		//colorMode(RGB);
-		//let col = lerpColor(from, to, amt);
-		//map value to color index
 		var colorIndex = floor(map(d.temperature, minTemp, maxTemp,0,colors.length-1));
 		var col = colors[colorIndex];
 		fill(col);
